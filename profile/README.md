@@ -1,88 +1,122 @@
 # M.E.F Programing Service S.R.L
 
-**M.E.F Programing Service S.R.L** is an independent software company based in Romania, focused on AI-assisted developer tooling, MCP project indexers, and controlled tool-use workflows for software engineering.
+**Native Windows engineering, deterministic AI tooling, and evidence-based model evaluation.**
 
-We build tools that help AI systems navigate real codebases more accurately by separating three concerns:
+M.E.F Programing Service S.R.L is an independent software company based in Romania. We bring more than three decades of production C++ and Windows engineering into current work on controlled, auditable AI systems.
+
+Our guiding principle is simple:
 
 ```text
-Find code.
-Read code.
-Do not guess code.
+Find the evidence.
+Read the evidence.
+Do not guess beyond the evidence.
 ```
 
-## Current focus
+## Engineering foundation
 
-Our current work is centered around deterministic project indexers and MCP-based code navigation.
+### SmartFTP and native Windows UI engineering
 
-Instead of asking an AI model to read large files blindly, our tools expose compact project metadata first:
+Founder Mike Walter has worked as a Senior C++ Engineer on [SmartFTP](https://www.smartftp.com/en-us/) since 1996.
 
-* files
-* symbols
-* imports
-* modules
-* source ranges
-* project structure
-* management/status information
+The engineering work includes:
 
-The model can then request the exact source range it needs before making implementation claims.
+- a production Direct2D and DirectWrite rendering pipeline
+- application UI systems built on Microsoft's undocumented DirectUI framework
+- XML `.ui` definitions describing control structure and behavior
+- a custom UxTheme-to-Direct2D renderer for native Windows theme parts
+- DirectComposition-based presentation and interaction
+- Ribbon, MDI, docking, floating and tabbed pane systems
+- custom ListView, ComboBox, CommandBar and other UI controls
+- adaptive layouts, DPI-aware behavior and Windows 11 support
+- Windows UI Automation and accessibility support for custom-rendered controls
+- long-term debugging, compatibility and regression work on an active commercial product
 
-This keeps AI-assisted code analysis more focused, more reproducible, and less dependent on broad context dumping.
+This work was designed and implemented without AI assistance. It is the production engineering foundation behind our current approach to AI tooling: explicit behavior, direct verification, controlled state and long-term maintainability.
 
-## Projects
+## Current work
 
-### mcp-cpp-project-indexer
+### Evidence-first AI developer infrastructure
 
-A Python-based C++ source-range indexer for large, module-heavy C++ and C++20 projects.
+We build infrastructure for tool-using AI systems that need tighter control than prompt-only workflows provide.
 
-It maps files, symbols, data declarations, includes, and C++20 module metadata to exact source ranges so MCP clients can locate and read only the relevant code.
+Current work covers:
 
-It is not a compiler, LSP replacement, semantic analyzer, refactoring engine, or call-graph builder.
+- deterministic project and source-range indexers
+- MCP-compatible tools and controlled tool routing
+- exact source reads before implementation claims
+- bounded execution and explicit failure conditions
+- audit, replay and operational visibility
+- reduction of unnecessary context and uncontrolled token use
 
-Repository:
-[mcp-cpp-project-indexer](https://github.com/mef-programming/mcp-cpp-project-indexer)
+Models may help generate proposals. They do not make final decisions, admit their own output as evidence, or replace direct inspection of the underlying source and system state.
 
-### MCP Project Indexers
+### Specialized language systems - private research
 
-A multi-language project-indexer family built around a shared TypeScript core.
+We are developing and evaluating compact, task-specific language models for bounded stages of a larger system, including language understanding, controlled query construction and natural-language generation.
 
-The goal is to provide a consistent MCP/HTTP/management surface across multiple programming languages, with language-specific parsing and symbol extraction layers.
+Operational knowledge remains in external data systems instead of being treated as permanently stored in model weights. Deterministic software and human review retain authority over validation and execution.
 
-Current and planned language targets include:
+The active repositories, training material, architecture details and experimental results remain private while this work is under evaluation. We do not publish capability claims without measured evidence.
 
-* TypeScript / JavaScript
-* Python
-* C#
-* Go
-* Java
-* Rust
+### ModelBuilder - in development
 
-Repository:
-[mcp-typescript-project-indexer](https://github.com/mef-programming/mcp-typescript-project-indexer)
+ModelBuilder is a teaching application intended to make language-model development understandable to beginners.
+
+It provides a guided path from first principles through model structure, training, evaluation and testing. The goal is to make intermediate states and experimental results observable instead of presenting model training as a black box.
+
+ModelBuilder is under active private development. No completion or release claim is made here.
+
+## Public projects
+
+### [mcp-cpp-project-indexer](https://github.com/mef-programming/mcp-cpp-project-indexer)
+
+A deterministic source-range indexer for large, module-heavy C++ and C++20 codebases, implemented as a lightweight Python service.
+
+It maps files, symbols, declarations, includes and module metadata to exact source ranges so an MCP client can locate and read only the relevant source.
+
+It is intentionally not a compiler, LSP replacement, semantic analyzer, refactoring engine or call-graph builder. Metadata locates code; original source provides the evidence.
+
+### [mcp-typescript-project-indexer](https://github.com/mef-programming/mcp-typescript-project-indexer)
+
+A deterministic TypeScript and JavaScript source-range indexer for MCP-based code navigation.
+
+It provides a consistent MCP-oriented surface for locating symbols, files, imports, exports and exact source ranges before an AI system explains or changes code.
+
+Additional language work remains developmental and is not presented here as completed support.
+
+## How we work
+
+1. Define the problem, constraints and evidence required for success.
+2. Inspect the existing system and reuse established tools before proposing new infrastructure.
+3. Refine ideas through multiple rounds of criticism and comparison; never rely on one model response.
+4. Produce a concrete plan before implementation begins.
+5. Build the smallest testable increment.
+6. Verify behavior directly against source code, runtime state, visual output or registered expectations.
+7. Preserve failures, corrections and unresolved results instead of rewriting them into success.
+
+For custom Windows interfaces, verification includes direct interaction, screenshots, high-zoom visual inspection, DPI and theme variation, accessibility-tree inspection and targeted debugging. Automation can support repeatability, but it does not replace expert visual and semantic judgment.
 
 ## Design principles
 
-We prefer deterministic routing facts over generated summaries.
-
-AI tools should not claim behavior from metadata alone. Metadata answers where code is. Source ranges show what the code says. The model can then reason from the source it actually read.
-
-Core principles:
-
-* source-grounded answers
-* exact line ranges
-* compact metadata before source reads
-* no fake semantic certainty
-* no hidden call-graph claims
-* local-first developer workflows
-* MCP-compatible tool surfaces
-* management/status endpoints for operational visibility
+- source-grounded answers
+- exact files, symbols and source ranges
+- compact metadata before source reads
+- deterministic checks before model judgment
+- no fake semantic certainty
+- no hidden call-graph or behavior claims
+- explicit clarification, rejection and inconclusive outcomes
+- local-first developer workflows
+- MCP-compatible tool surfaces
+- human authority over promotion and execution
+- measurable behavior before scaling
 
 ## Company
 
-Website:
-https://www.mef-programming.eu
+**M.E.F Programing Service S.R.L**  
+Independent software company - Romania
 
-Contact:
-[mw@mef-programming.eu](mailto:mw@mef-programming.eu)
+Founder and Lead Engineer: **Mike Walter**
 
-Founder:
-Mike Walter
+Website: [www.mef-programming.eu](https://www.mef-programming.eu/)  
+LinkedIn: [Mike Walter](https://www.linkedin.com/in/mike-walter-40b59224b/)  
+Contact: [mw@mef-programming.eu](mailto:mw@mef-programming.eu)
