@@ -58,13 +58,15 @@ Operational knowledge remains in external data systems instead of being treated 
 
 The active repositories, training material, architecture details and experimental results remain private while this work is under evaluation. We do not publish capability claims without measured evidence.
 
-### ModelBuilder - in development
+### ModelBuilder - new project under active development
 
-ModelBuilder is a teaching application intended to make language-model development understandable to beginners.
+ModelBuilder is a new native Windows teaching application that makes language-model development accessible to beginners without hiding the underlying process.
 
-It provides a guided path from first principles through model structure, training, evaluation and testing. The goal is to make intermediate states and experimental results observable instead of presenting model training as a black box.
+Its guided learning path begins with the fundamentals of text and tokenization, then leads through preparing data, building and training a model, evaluating results, fine-tuning and testing the model through direct interaction. Integrated explanations and interactive experiments connect each concept to the system the learner is building.
 
-ModelBuilder is under active private development. No completion or release claim is made here.
+The application runs locally and is designed to expose intermediate states, measurements and failure conditions instead of presenting model training as a black box.
+
+ModelBuilder remains a private, unreleased project. This public description intentionally omits implementation details and makes no completion claim.
 
 ## Public projects
 
